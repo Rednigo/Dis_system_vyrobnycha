@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1b80602c-3058-40e7-90b0-59d430374eed" name="Changes" comment="Створив DataNode.py і ControlNode.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ControlNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +35,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "B:/Виробнича практика/Dis_system_vyrobnycha"
+    "last_opened_file_path": "B:/Чисельні методи/Задача чисельного інтегрування",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

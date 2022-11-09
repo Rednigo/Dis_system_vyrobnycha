@@ -1,15 +1,39 @@
 import json
-from http import server
-from multiprocessing import Process
 from flask import Flask, request
+import Client
+import ControlNode
+import DataNode
 
 app = Flask(__name__)
-@app.route("/users/<user_id>", methods=['GET', 'POST'])
-def user(user_id):
-   #if request.method == 'GET':
 
-   if request.method == 'POST':
-       data = request.form.get("some_data")
+@app.route('/writemessage', methods=['POST'])
+def write_message(Client, message):
+    request.post(Client.write(json.dumps(message)))
+
+@app.route('/<adress>/writemessage', methods=['POST'])
+def write_messagenode(adress, DataNode, message):
+    request.post(DataNode.write(json.dumps(message)))
+@app.route('/getmessage', methods=['GET'])
+def get_message(Client):
+     request.get(Client.read())
+@app.route('/<adress>/getmessage', methods=['GET'])
+def get_messagenode(adress, DataNode):
+     request.get(DataNode.read())
+@app.route('/<adress>/addnode', methods=['POST'])
+def add_node(adress, ControlNode, message):
+     request.post(ControlNode.add_node(json.dumps(message)))
+
+@app.route('/<adress>/removenode', methods=['POST'])
+def remove_node(adress, ControlNode, message):
+    request.post(ControlNode.remove_node(json.dumps(message)))
+
+@app.route('/<adress>/getstats')
+def get_stats(adress):
+    return Client.get_stats()
+
+@app.route('/')
+def index():
+    return "Hello!"
 
 #Щоб запустити прописати в консолі: flask --app server run --host=0.0.0.0
 if __name__ == "__main__":
@@ -28,7 +52,7 @@ if __name__ == "__main__":
 #         json_data_obj = json.loads(request_body_json_string)
 #         json_data_obj['SEEN_BY_THE_SERVER'] = 'Yes'
 #
-#         # Sending data to the client
+#         # Sending data to the Client
 #         self.wfile.write(bytes(json.dumps(json_data_obj), 'utf-8'))
 #
 # def start_server(server_address):

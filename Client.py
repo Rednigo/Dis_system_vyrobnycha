@@ -1,7 +1,6 @@
 import requests
 from flask import json
 
-
 class Client:
     def __init__(self, adress, requests_count=1000):
         self.adress = adress
