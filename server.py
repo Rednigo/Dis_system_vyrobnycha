@@ -29,7 +29,7 @@ def remove_node(adress, ControlNode, message):
 
 @app.route('/<adress>/getstats')
 def get_stats(adress):
-    return Client.get_stats()
+    return ControlNode.get_stats()
 
 @app.route('/')
 def index():
